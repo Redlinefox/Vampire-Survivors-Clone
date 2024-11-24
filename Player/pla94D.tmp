@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ljbib72e2ejb"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_h3gf0"]
+[ext_resource type="Texture2D" uid="uid://dmlhue76stb7w" path="res://Textures/Player/player_sprite.png" id="1_maapl"]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_h3gf0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_maapl")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
