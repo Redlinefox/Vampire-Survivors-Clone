@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Utility/spawn_info.gd" id="5_bj2gh"]
 [ext_resource type="PackedScene" uid="uid://bf2gws1lk85i8" path="res://Enemy/enemy.tscn" id="6_d2ix4"]
 
-[sub_resource type="Resource" id="Resource_dppux"]
+[sub_resource type="Resource" id="Resource_ikwjg"]
 script = ExtResource("5_bj2gh")
 time_start = 0
 time_end = 60
@@ -29,6 +29,6 @@ region_rect = Rect2(0, 0, 4000, 4000)
 [node name="Player" parent="." instance=ExtResource("3_floon")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_rbgjk")]
-spawns = Array[ExtResource("5_bj2gh")]([SubResource("Resource_dppux")])
+spawns = Array[ExtResource("5_bj2gh")]([SubResource("Resource_ikwjg")])
 
 [editable path="EnemySpawner"]

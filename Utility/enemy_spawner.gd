@@ -15,13 +15,12 @@ func _on_timer_timeout() -> void:
 		# If the time counter is between "start" and "end" 
 		if time >= i.time_start and time <= i.time_end:
 			# check if the spawn delay counter is less than the spawn delay time, if yes advance spawn delay counter by 1.
-			print("Time:", time)
 			if i.spawn_delay_counter < i.enemy_spawn_delay:
 				i.spawn_delay_counter += 1
 			else:
 				# reset the spawn delay counter to 0, load the enemy resource, set a counter to 0
 				i.spawn_delay_counter = 0
-				var new_enemy = load(str(i.enemy.resource_path))
+				var new_enemy = i.enemy
 				var counter = 0
 				# while the counter is less than the SpawnInfo.enemy_number, instantiate it to create the Node, get a random position for that Node and then use add_child function to add it to the scene.
 				while counter < i.enemy_number:

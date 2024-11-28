@@ -25,6 +25,5 @@ func _physics_process(_delta: float) -> void:
 
 func _on_hurtbox_hurt(damage: Variant) -> void:
 	enemy_hp -= damage
-	print("Enemy HP: ", enemy_hp)
 	if enemy_hp <= 0:
 		queue_free()

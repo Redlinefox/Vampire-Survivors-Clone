@@ -55,6 +55,8 @@ radius = 5.0
 height = 20.0
 
 [node name="enemy_kobold_weak" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_v3grd")
 
@@ -73,6 +75,7 @@ libraries = {
 }
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_uvpg2")]
+collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
@@ -81,6 +84,7 @@ shape = SubResource("RectangleShape2D_tshvj")
 
 [node name="Hitbox" parent="." instance=ExtResource("4_shv2u")]
 collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(1, 2)
