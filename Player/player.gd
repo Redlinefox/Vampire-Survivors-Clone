@@ -15,7 +15,7 @@ var ice_spear = preload("res://Player/Attack/ice_spear.tscn")
 
 # IceSpear
 var icespear_ammo = 0
-var icespear_base_ammo = 100
+var icespear_base_ammo = 1
 var icespear_attack_speed = 1
 var icespear_level = 1
 
@@ -58,7 +58,7 @@ func movement():
 		animation.pause()
 
 
-func _on_hurtbox_hurt(damage: Variant) -> void:
+func _on_hurtbox_hurt(damage:, _angle, _knockback) -> void:
 	player_hp -= damage
 	print("Player HP: ", player_hp)
 

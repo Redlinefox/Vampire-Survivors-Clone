@@ -12,12 +12,14 @@ var attack_size = 1.0
 var target = Vector2.ZERO
 var angle = Vector2.ZERO
 
+signal remove_from_array(object)
+
 func _ready() -> void:
 	angle = global_position.direction_to(target)
 	rotation = angle.angle() + deg_to_rad(135)
 	match level:
 		1:
-			hp = 1
+			hp = 2
 			speed = 100
 			damage = 5
 			knockback_amount = 100
@@ -34,8 +36,10 @@ func _physics_process(delta: float) -> void:
 func enemy_hit(charge = 1):
 	hp -= charge
 	if hp <= 0:
+		emit_signal("remove_from_array", self)
 		queue_free()
 
 
 func _on_timer_timeout() -> void:
+	emit_signal("remove_from_array", self)
 	queue_free()
