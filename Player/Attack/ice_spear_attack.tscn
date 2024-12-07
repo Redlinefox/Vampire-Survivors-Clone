@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx57i751s1mpc"]
+
+[ext_resource type="Script" path="res://ice_spear_attack.gd" id="1_4qe0o"]
+[ext_resource type="PackedScene" uid="uid://dwqcqb1qume52" path="res://Player/Attack/ice_spear_v_2.tscn" id="2_n0b1r"]
+
+[node name="IceSpearAttack" type="Timer"]
+autostart = true
+script = ExtResource("1_4qe0o")
+
+[node name="Firerate" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="IceSpear_v2" parent="." instance=ExtResource("2_n0b1r")]
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

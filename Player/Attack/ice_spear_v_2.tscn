@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwqcqb1qume52"]
+
+[ext_resource type="Texture2D" uid="uid://bn5185kidplbx" path="res://Textures/Items/Weapons/ice_spear.png" id="1_enjmm"]
+[ext_resource type="Script" path="res://Player/Attack/ice_spear_v_2.gd" id="2_mci5g"]
+[ext_resource type="AudioStream" uid="uid://c1vyr0hqtdiow" path="res://Audio/SoundEffect/ice.wav" id="3_sy8i8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35wh7"]
+size = Vector2(34, 6.21421)
+
+[node name="IceSpear_v2" type="Sprite2D"]
+position = Vector2(0, -0.6)
+rotation = 2.35619
+texture = ExtResource("1_enjmm")
+script = ExtResource("2_mci5g")
+
+[node name="Area2D" type="Area2D" parent="." groups=["attack"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.500001, -0.5)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_35wh7")
+
+[node name="IceSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sy8i8")
+pitch_scale = 1.5
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-8.13042, -8.64609)
+rotation = 0.785398
+scale = Vector2(1.04974, 0.315082)
+rect = Rect2(-5, -11, 32.5, 19.8)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
